@@ -22,6 +22,7 @@ SSH はサーバ，クライアントともにデフォルトでインストー�
 $ ssh hostname.local
 (username@hostname.local) Password:
 Last login: Fri Aug 15 14:11:20 2025 from 192.168.100.10
+
 %
 ```
 
