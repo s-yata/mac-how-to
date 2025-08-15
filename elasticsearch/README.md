@@ -148,6 +148,44 @@ Elasticsearch を起動し直して HTTP クライアントで接続すれば，
 
 以上でインストール完了です．
 
+### プラグインをインストール
+
+以下のページを参考に analysis-kuromoji をインストールしてみます．
+
+- Japanese (kuromoji) analysis plugin | Reference
+  - https://www.elastic.co/docs/reference/elasticsearch/plugins/analysis-kuromoji
+
+プラグインのインストールは `elasticsearch-plugin` に名前だけを指定すればいいだけのはずですが，それでは失敗しました．
+
+```
+packages % elasticsearch-plugin install analysis-kuromoji
+-> Installing analysis-kuromoji
+-> Failed installing analysis-kuromoji
+-> Rolling back analysis-kuromoji
+-> Rolled back analysis-kuromoji
+
+ERROR: attempted to install release build of official plugin on snapshot build of Elasticsearch, with exit code 78
+```
+
+このようなときは，ダウンロードしたアーカイブのパスを指定すれば大丈夫です．
+
+```
+packages % curl -LO https://artifacts.elastic.co/downloads/elasticsearch-plugins/analysis-kuromoji/analysis-kuromoji-9.1.2.zip
+
+packages % elasticsearch-plugin install "file://${HOME}/packages/analysis-kuromoji-9.1.2.zip"
+-> Installing file:///Users/elasticsearch/packages/analysis-kuromoji-9.1.2.zip
+-> Downloading file:///Users/elasticsearch/packages/analysis-kuromoji-9.1.2.zip
+[=================================================] 100%   
+WARNING: plugin has a policy file with no additional entitlements. Double check this is intentional.
+-> Installed analysis-kuromoji
+-> Please restart Elasticsearch to activate any plugins installed
+
+packages % elasticsearch-plugin list
+analysis-kuromoji
+```
+
+以上でインストール完了です．
+
 ## brew によるインストール
 
 brew でインストールできるのは古い Elasticsearch です．
