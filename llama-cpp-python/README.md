@@ -24,7 +24,15 @@ tmp % source venv/bin/activate
 準備が正しくできていれば，インストールは問題なく完了するはずです．
 
 ```
-tmp % pip3 install llama-cpp-python
+(venv) tmp % pip3 install llama-cpp-python
 ```
 
 動作確認までできればいいのですが，モデルが大きいのでここで終わりにします．
+
+venv は deactivate で解除できます．
+
+```
+(venv) tmp % deactivate
+
+tmp %
+```
