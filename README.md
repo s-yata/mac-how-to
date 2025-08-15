@@ -7,3 +7,4 @@ macOS Sequoia 向けの内容になっています．
 - [SSH](ssh)
 - [Java](java)
 - [Elasticsearch](elasticsearch)
+- [Homebrew](homebrew)
