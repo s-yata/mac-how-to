@@ -1,0 +1,32 @@
+{
+  "mappings": {
+    "properties": {
+      "product_id": {
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "analyzer": "kuromoji"
+      },
+      "description": {
+        "type": "text",
+        "analyzer": "kuromoji"
+      },
+      "price": {
+        "type": "integer"
+      },
+      "category": {
+        "type": "keyword"
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "in_stock": {
+        "type": "boolean"
+      },
+      "created_at": {
+        "type": "date"
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 Elasticsearch をインストールする方法はいくつかありますが，ソースコードからビルドします．
 
-## ソースコードをビルド
+## ソースコードからビルド
 
 GitHub からアーカイブをダウンロードして展開します．
 
@@ -193,6 +193,133 @@ analysis-kuromoji
 ```
 
 以上でインストール完了です．
+
+### 動作確認
+
+インデックスの作成，データの投入，検索を試してみます．
+
+最初にインデックスを作成します．
+```
+elasticsearch % curl -s -H "Content-Type: application/json" -X PUT "http://localhost:9200/products?pretty" -d @schema.json
+```
+
+```json
+{
+  "acknowledged": true,
+  "shards_acknowledged": true,
+  "index": "products"
+}
+```
+
+次にデータを投入します．
+
+```
+elasticsearch % curl -s -H "Content-Type: application/x-ndjson" -X POST "http://localhost:9200/products/_bulk?pretty" --data-binary @data.ndjson
+```
+```json
+{
+  "errors" : false,
+  "took" : 203,
+  "items" : [
+    {
+      "index" : {
+        "_index" : "products",
+        "_id" : "001",
+        "_version" : 1,
+        "result" : "created",
+        "_shards" : {
+          "total" : 2,
+          "successful" : 1,
+          "failed" : 0
+        },
+        "_seq_no" : 0,
+        "_primary_term" : 1,
+        "status" : 201
+      }
+    },
+    ...
+  ]
+}
+```
+
+キーワード検索を試します．
+
+```
+elasticsearch % curl -s -H "Content-Type: application/json" -X GET "http://localhost:9200/products/_search?pretty" -d @search-keyword.json
+```
+```json
+{
+  "took" : 54,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 1,
+    "successful" : 1,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : {
+      "value" : 2,
+      "relation" : "eq"
+    },
+    "max_score" : 0.7785363,
+    "hits" : [
+      {
+        "_index" : "products",
+        "_id" : "001",
+        "_score" : 0.7785363,
+        "_source" : {
+          "product_id" : "001",
+          "name" : "高機能ワイヤレスイヤホンX",
+          "description" : "最新のノイズキャンセリング技術を搭載した、非常に軽量なワイヤレスイヤホンです。通勤やスポーツに最適です。",
+          "price" : 15000,
+          "category" : "オーディオ",
+          "tags" : [
+            "新商品",
+            "おすすめ",
+            "イヤホン"
+          ],
+          "in_stock" : true,
+          "created_at" : "2025-08-15T12:00:00+09:00"
+        }
+      },
+      ...
+    ]
+  }
+}
+```
+
+ほかの検索については，結果は省略します．
+
+```
+elasticsearch % curl -s -H "Content-Type: application/json" -X GET "http://localhost:9200/products/_search?pretty" -d @search-or.json
+```
+
+```
+elasticsearch % curl -s -H "Content-Type: application/json" -X GET "http://localhost:9200/products/_search?pretty" -d @search-and.json
+```
+
+```
+elasticsearch % curl -s -H "Content-Type: application/json" -X GET "http://localhost:9200/products/_search?pretty" -d @search-complex.json
+```
+
+```
+elasticsearch % curl -s -H "Content-Type: application/json" -X GET "http://localhost:9200/products/_search?pretty" -d @search-aggregate.json
+```
+
+最後に作成したインデックスを削除します．
+
+```
+elasticsearch % curl -s -X DELETE "http://localhost:9200/products?pretty"
+```
+
+```json
+{
+  "acknowledged": true
+}
+```
+
+以上で完了です．
 
 ## brew によるインストール
 

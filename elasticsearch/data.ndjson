@@ -1,0 +1,10 @@
+{ "index" : { "_index" : "products", "_id" : "001" } }
+{ "product_id": "001", "name": "高機能ワイヤレスイヤホンX", "description": "最新のノイズキャンセリング技術を搭載した、非常に軽量なワイヤレスイヤホンです。通勤やスポーツに最適です。", "price": 15000, "category": "オーディオ", "tags": ["新商品", "おすすめ", "イヤホン"], "in_stock": true, "created_at": "2025-08-15T12:00:00+09:00" }
+{ "index" : { "_index" : "products", "_id" : "002" } }
+{ "product_id": "002", "name": "オーガニックコットンTシャツ", "description": "肌触りの良いオーガニックコットンを100%使用したシンプルなデザインのTシャツです。カラーバリエーションも豊富。", "price": 4500, "category": "ファッション", "tags": ["定番", "コットン"], "in_stock": true, "created_at": "2025-07-20T10:00:00+09:00" }
+{ "index" : { "_index" : "products", "_id" : "003" } }
+{ "product_id": "003", "name": "自動調理スマート鍋", "description": "材料を入れてボタンを押すだけで、様々な料理を自動で調理してくれます。忙しい毎日の食卓をサポート。", "price": 25000, "category": "キッチン家電", "tags": ["時短", "便利グッズ", "おすすめ"], "in_stock": false, "created_at": "2025-08-01T18:30:00+09:00" }
+{ "index" : { "_index" : "products", "_id" : "004" } }
+{ "product_id": "004", "name": "軽量ノートパソコン Pro", "description": "薄型軽量でありながらパワフルな性能を持つビジネス向けノートパソコン。バッテリー駆動時間も長い。", "price": 180000, "category": "PC・周辺機器", "tags": ["ビジネス", "高性能"], "in_stock": true, "created_at": "2025-06-10T11:00:00+09:00" }
+{ "index" : { "_index" : "products", "_id" : "005" } }
+{ "product_id": "005", "name": "ワイヤレス充電対応スマートフォンスタンド", "description": "スマートフォンを置くだけで充電できる便利なスタンドです。デスク周りをすっきりと整理できます。", "price": 3800, "category": "PC・周辺機器", "tags": ["スマホアクセサリー", "便利グッズ"], "in_stock": true, "created_at": "2025-08-10T14:20:00+09:00" }

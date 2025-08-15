@@ -1,0 +1,20 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "description": "軽量"
+          }
+        }
+      ],
+      "filter": [
+        {
+          "term": {
+            "in_stock": true
+          }
+        }
+      ]
+    }
+  }
+}

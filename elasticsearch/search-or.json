@@ -1,0 +1,19 @@
+{
+  "query": {
+    "bool": {
+      "should": [
+        {
+          "term": {
+            "tags": "おすすめ"
+          }
+        },
+        {
+          "term": {
+            "tags": "新商品"
+          }
+        }
+      ],
+      "minimum_should_match": 1
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "size": 0,
+  "aggs": {
+    "products_per_category": {
+      "terms": {
+        "field": "category"
+      }
+    }
+  }
+}

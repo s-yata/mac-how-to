@@ -1,0 +1,20 @@
+{
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "term": {
+            "category": "PC・周辺機器"
+          }
+        },
+        {
+          "range": {
+            "price": {
+              "lt": 5000
+            }
+          }
+        }
+      ]
+    }
+  }
+}
