@@ -8,3 +8,4 @@ macOS Sequoia 向けの内容になっています．
 - [Java](java)
 - [Elasticsearch](elasticsearch)
 - [Homebrew](homebrew)
+- [OpenMP (libomp)](openmp)
