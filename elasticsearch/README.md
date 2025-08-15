@@ -99,6 +99,10 @@ elasticsearch-9.1.2 % source ~/.zshrc
 ```
 
 設定ファイルを必要に応じて変更します．
+
+- Configure Elasticsearch | Elastic Docs
+  - https://www.elastic.co/docs/deploy-manage/deploy/self-managed/configure-elasticsearch
+
 以下の例では，認証や HTTPS を使わないようにして，ローカルホスト以外からはアクセスできないようにしています．
 
 ```
@@ -112,6 +116,10 @@ http.host: 127.0.0.1
 
 デフォルトの設定では， Elasticsearch は起動時にメモリの 50% を確保します．
 用途によっては無駄になるので，必要に応じてメモリ使用量を制限します．
+
+- JVM settings | Reference
+  - https://www.elastic.co/docs/reference/elasticsearch/jvm-settings
+
 たとえば， 2GB に制限するのであれば，以下のように設定します．
 
 ```
