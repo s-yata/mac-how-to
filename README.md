@@ -9,3 +9,4 @@ macOS Sequoia 向けの内容になっています．
 - [Elasticsearch](elasticsearch)
 - [Homebrew](homebrew)
 - [OpenMP (libomp)](openmp)
+- [llama-cpp-python](llama-cpp-python)
